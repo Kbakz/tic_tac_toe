@@ -1,0 +1,139 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: calibri;
+	user-select: none;
+}
+
+:root{
+  --bg:#000118;
+  --bg-hover: #222;
+  --line: #F3F4FF;
+  --line-size: 4px;
+  --color-jogada: #57CFFF;
+  --color-title: #F3F4FF;
+}
+
+body{
+  background: var(--bg);
+  position: relative;
+  top: 0;
+  left:0;
+  height: 100vh;
+}
+
+.game{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+  padding: 50px;
+}
+
+.overlay-vencedor{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.2);
+  backdrop-filter: blur(5px);
+  z-index:1;
+  border-radius: 30px;
+  border: 2px solid black;
+  display:none
+}
+
+.vencedor-content{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  color: white;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.overlay-vencedor span{
+    font-size: 60px;
+    text-transform: uppercase;
+  padding-bottom: 40px;
+}
+
+.overlay-vencedor p{
+    font-size: 30px;
+    cursor: pointer;
+  display:inline-block
+}
+
+.overlay-vencedor p:hover{
+    color: #ccc
+}
+
+.game h1{
+  color: var(--color-title);
+  font-size: 50px;
+}
+
+.game-content{
+  display:flex;
+  width: 600px;
+  height: 600px;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+.campo-single{
+  width: 33.3%;
+  heigth: 200px;
+  border-style: solid;
+  border-color: var(--line);
+  border-width: 0;
+  transition: 0.2s;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.campo-single:nth-of-type(1){
+    border-width:  0 var(--line-size) var(--line-size) 0 ;
+}
+
+.campo-single:nth-of-type(2){
+    border-width:  0 0 var(--line-size) 0 ;
+}
+
+.campo-single:nth-of-type(3){
+    border-width:  0 0 var(--line-size) var(--line-size);
+}
+
+.campo-single:nth-of-type(4){
+    border-width:  0 var(--line-size) var(--line-size) 0 ;
+}
+
+.campo-single:nth-of-type(5){
+    border-width:  0 0 var(--line-size) 0 ;
+}
+
+.campo-single:nth-of-type(6){
+    border-width:  0 0 var(--line-size) var(--line-size) ;
+}
+
+.campo-single:nth-of-type(7){
+    border-width:  0 var(--line-size) 0 0 ;
+}
+
+.campo-single:nth-of-type(8){
+    border-width:  0;
+}
+
+.campo-single:nth-of-type(9){
+    border-width: 0 0 0 var(--line-size);
+}
+
+.campo-single span{
+  font-size: 80px;
+  color: var(--color-jogada);
+}
